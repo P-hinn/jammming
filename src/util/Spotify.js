@@ -1,5 +1,5 @@
 const clientId = '715f2ccee5e04475ab3bc5375176f201';
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'http://helpless-mass.surge.sh';
 let accessToken;
 
 const Spotify = {
