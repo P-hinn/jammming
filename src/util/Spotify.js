@@ -2,7 +2,8 @@ import { getQueriesForElement } from "@testing-library/react";
 
 const clientId = '715f2ccee5e04475ab3bc5375176f201';
 // const redirectUri = 'http://helpless-mass.surge.sh';
-const redirectUri = 'http://localhost:3000';
+//const redirectUri = 'http://localhost:3000';
+const redirectUri = 'https://www.philippniestroj.com/source/jammming';
 let accessToken;
 
 const Spotify = {

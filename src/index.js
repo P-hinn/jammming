@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
+import {createBrowserHistory} from 'history';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,6 +11,11 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+export const history = createBrowserHistory({
+
+  basename: process.env.PUBLIC_URL
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
