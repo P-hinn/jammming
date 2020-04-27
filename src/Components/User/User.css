@@ -1,0 +1,11 @@
+.user{
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.username{
+    color: #6c41ec;
+}

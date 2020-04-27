@@ -17,6 +17,20 @@
   .Track-action:hover {
     color: rgba(265, 265, 265, .5);
   }
+
+  .Play-action{
+    cursor: pointer;
+    padding: .5rem;
+    font-size: 1.05rem;
+    transition: color .25s;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+  }
+
+  .Play-action:hover{
+    font-size: 1.1rem;
+  }
   
   .Track-information {
     flex-grow: 1;

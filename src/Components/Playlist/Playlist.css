@@ -39,6 +39,10 @@
   .Playlist-save:hover {
     background-color: rgba(108, 65, 233, .7);
   }
+
+  .User{
+    align-self: start;
+  }
   
   ::-webkit-scrollbar {
       width: 0px;

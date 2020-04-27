@@ -1,5 +1,8 @@
+import { getQueriesForElement } from "@testing-library/react";
+
 const clientId = '715f2ccee5e04475ab3bc5375176f201';
-const redirectUri = 'http://helpless-mass.surge.sh';
+// const redirectUri = 'http://helpless-mass.surge.sh';
+const redirectUri = 'http://localhost:3000';
 let accessToken;
 
 const Spotify = {
@@ -19,7 +22,7 @@ const Spotify = {
                 window.history.pushState('Acces Token', null, '/');
                 return accessToken;
             } else {
-                const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
+                const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public%20user-modify-playback-state%20streaming%20user-read-private&redirect_uri=${redirectUri}`;
                 window.location = accessUrl;
             }
     },
@@ -75,6 +78,38 @@ const Spotify = {
                     })
                 })
             });
+    },
+
+    playTrack(track){
+        const accessToken = Spotify.getAccesToken();
+        const headers = {Authorization: `Bearer ${accessToken}`};
+        return fetch(`https://api.spotify.com/v1/me/player/play`,
+            {
+                headers: headers,
+                method: 'PUT',
+                body: JSON.stringify({uris: [track.uri]})
+            })      
+    },
+
+    pauseTrack(){
+        const accessToken = Spotify.getAccesToken();
+        const headers = {Authorization: `Bearer ${accessToken}`};
+        return fetch('https://api.spotify.com/v1/me/player/pause',
+        {
+            headers: headers,
+            method: 'PUT'
+        });
+    },
+    getUser(){
+        const accessToken = Spotify.getAccesToken();
+        const headers = {Authorization: `Bearer ${accessToken}`};
+
+        return fetch('https://api.spotify.com/v1/me', {headers: headers}
+        ).then(response => response.json())
+        .then(jsonResponse => {
+        //returns userObejct
+        return jsonResponse.display_name;
+        })
     }
 }
 

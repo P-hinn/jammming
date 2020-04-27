@@ -4,13 +4,16 @@ import './SearchBar.css';
 class SearchBar extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            term: ''
+        }
 
         this.search = this.search.bind(this);
         this.handleTermChange = this.handleTermChange.bind(this);
     }
 
     search() {
-        if(this.state.term){
+        if(this.state.term.length > 0 ){
         this.props.onSearch(this.state.term);
         } else{
             console.log('Enter A Song');
