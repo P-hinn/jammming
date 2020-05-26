@@ -44,6 +44,21 @@ h2 {
   width: 100%;
 }
 
+.github{
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.fa-github{
+  color: white;
+}
+
+.fa-github:hover{
+  color: gray;
+}
+
 @media only screen and (max-width: 1020px) {
   .App-playlist {
     align-items: center;
