@@ -97,7 +97,7 @@ class App extends React.Component{
       </h1>
       <div className="App">
         <div class="github">
-          <a href="https://github.com/P-hinn/jammming"><i class="fab fa-github fa-4x"></i></a>
+          <a href="https://github.com/P-hinn/jammming" target="_blank"><i class="fab fa-github fa-4x"></i></a>
         </div>
         <SearchBar onSearch={this.search}/>
         <div className="App-playlist">
